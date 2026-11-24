@@ -1,0 +1,60 @@
+{
+  "name": "dsh-perspective",
+  "version": "0.1.0",
+  "description": "Perspective placement panel for DeepSeek Harness: put a character cutout into a real photo with real camera parameters (focal length, pitch, camera height, lateral offset, distance), preview it live on a canvas, and write the numbers back into scenes/<name>.yaml.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Vesperviod",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vesperviod/dsh-perspective.git"
+  },
+  "homepage": "https://github.com/Vesperviod/dsh-perspective#readme",
+  "bugs": {
+    "url": "https://github.com/Vesperviod/dsh-perspective/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh-bundle",
+    "perspective",
+    "camera-projection",
+    "ground-plane",
+    "scene-editor",
+    "canvas",
+    "character-placement"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./prompts.json": "./prompts.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "prompts.json",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Perspective",
+    "description": "Tune a scene's camera height, pitch, distance and lateral offset in the sidebar, see the character land on the photo's ground plane live, and save straight back into scenes/<name>.yaml (comments preserved)."
+  }
+}

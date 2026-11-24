@@ -1,0 +1,40 @@
+# Bundle layer: mount the perspective panel (index.js = host routes,
+# client.js = Web UI panel in the left sidebar).
+#
+# Nothing in this file is machine-specific. The workspace is auto-detected
+# (config.workspace → DSH_PERSPECTIVE_WORKSPACE → the folder two levels above
+# this package, which is where a `link:` install usually sits → process cwd),
+# and every local dependency (ffmpeg / python / MOSS / VLM) is optional.
+#
+# To pin anything, override this row in your profile's cordis.patch.yml (it is
+# applied after bundle layers) — same id, full config:
+#
+#   - id: perspective
+#     name: dsh-perspective
+#     config:
+#       workspace: 'C:/path/to/project'
+#       python: 'envs/matting/Scripts/python.exe'
+#       ffmpeg: 'C:/ffmpeg/bin/ffmpeg.exe'
+#       tools:
+#         intake: tools/intake_scene.py
+#         makeChar: tools/make_char.py
+#         fixEdges: tools/fix_edges.py
+#       moss:
+#         url: ''            # '' = same-origin /api/moss-studio
+#       vlm:
+#         url: 'http://127.0.0.1:11435/v1/chat/completions'
+#         health: 'http://127.0.0.1:11435/health'
+#         model: 'Qwen2.5-VL-3B-Instruct'
+#         bootScript: tools/vision/serve_vlm.py
+#         python: 'C:/path/to/venv/Scripts/python.exe'
+#       protectedChars: []
+#
+# See README.md for the full key list.
+- insert:
+    - id: perspective
+      name: dsh-perspective
+      config:
+        # 场景 yaml 与素材目录的约定；工作区根目录另行自动探测。
+        sceneDir: 'scenes'
+        photosDir: '素材/实拍'
+        charsDir: '素材/角色'

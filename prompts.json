@@ -1,0 +1,196 @@
+{
+  "_readme": "立绘 prompt 模板。base 是 Becky 的固定设定（别删挑染/配饰/不笑/全身/鞋），outfits 按底图识别出的场景挑。{outfit} 由候选替换进去。改这个文件不用重启 DSH。",
+  "base": "{shot}, {pose}, cold calm expression, no smile, half-lidded eyes, beautiful detailed face, large expressive blue eyes, delicate sharp eyebrows, chin-length black bob cut with grey-blue highlight strands in the hair on both sides, left ear silver hoop earring, thin leather cord on right wrist, slim figure, {outfit}, {extra}, face clearly visible with sharp detailed facial features, {framing}, plain light grey background, detailed anime illustration, clean lineart, soft cel shading, high quality",
+  "outfits": {
+    "winter_outdoor": {
+      "label": "冬天户外 · 羽绒服",
+      "match": {
+        "season": [
+          "winter"
+        ],
+        "scene_type": [
+          "outdoor"
+        ]
+      },
+      "variants": [
+        {
+          "outfit": "thick black puffer jacket over a light grey sweater, dark plaid skirt, black tights, white ankle socks, black sneakers",
+          "extra": "light snow on shoulders"
+        },
+        {
+          "outfit": "dark navy wool coat with scarf, black trousers, brown leather boots",
+          "extra": "breath faintly visible in cold air"
+        },
+        {
+          "outfit": "black puffer jacket, dark jeans, white sneakers, hands in pockets",
+          "extra": "wind-blown hair"
+        }
+      ]
+    },
+    "autumn_outdoor": {
+      "label": "秋天户外 · 风衣",
+      "match": {
+        "season": [
+          "autumn"
+        ],
+        "scene_type": [
+          "outdoor"
+        ]
+      },
+      "variants": [
+        {
+          "outfit": "beige trench coat over a white shirt, black trousers, dark loafers",
+          "extra": "coat slightly open"
+        },
+        {
+          "outfit": "grey knit cardigan over a white tee, dark jeans, white sneakers",
+          "extra": "autumn afternoon light"
+        },
+        {
+          "outfit": "black leather jacket, dark trousers, black boots",
+          "extra": "hands relaxed at sides"
+        }
+      ]
+    },
+    "indoor": {
+      "label": "室内 · 毛衣",
+      "match": {
+        "scene_type": [
+          "indoor"
+        ]
+      },
+      "variants": [
+        {
+          "outfit": "light grey knit sweater, black trousers, dark socks, no shoes",
+          "extra": "indoor soft light"
+        },
+        {
+          "outfit": "white shirt with a black cardigan, dark pleated skirt, black tights, black shoes",
+          "extra": "hands clasped in front"
+        },
+        {
+          "outfit": "charcoal turtleneck sweater, black trousers, black sneakers",
+          "extra": "standing by a wall"
+        }
+      ]
+    },
+    "lab": {
+      "label": "实验室 · 白大褂",
+      "match": {
+        "scene_type": [
+          "indoor"
+        ],
+        "keywords": [
+          "lab",
+          "laboratory",
+          "classroom",
+          "实验"
+        ]
+      },
+      "variants": [
+        {
+          "outfit": "unbuttoned white lab coat over a grey shirt, black trousers, dark shoes",
+          "extra": "clothes not pure white, visible seams and wrinkles"
+        },
+        {
+          "outfit": "white lab coat, navy shirt, black trousers, black leather shoes",
+          "extra": "sleeves slightly rolled"
+        }
+      ]
+    },
+    "snow_indoor": {
+      "label": "半室内 · 雪地边缘",
+      "match": {
+        "season": [
+          "winter"
+        ],
+        "keywords": [
+          "snow",
+          "barn",
+          "shed",
+          "雪",
+          "棚"
+        ]
+      },
+      "variants": [
+        {
+          "outfit": "black puffer jacket, dark plaid skirt, black tights, white socks, black sneakers",
+          "extra": "hands at sides, plain background only"
+        },
+        {
+          "outfit": "dark green winter coat, black trousers, brown boots",
+          "extra": "hands in pockets, plain background only"
+        }
+      ]
+    }
+  },
+  "fallback": {
+    "label": "通用 · 黑白灰",
+    "variants": [
+      {
+        "outfit": "black jacket over a grey sweater, black trousers, black sneakers",
+        "extra": "neutral pose"
+      },
+      {
+        "outfit": "white shirt, black trousers, black shoes",
+        "extra": "neutral pose"
+      },
+      {
+        "outfit": "grey knit sweater, dark jeans, white sneakers",
+        "extra": "neutral pose"
+      }
+    ]
+  },
+  "poses": [
+    {
+      "label": "正面",
+      "pose": "standing, straight posture, facing camera"
+    },
+    {
+      "label": "3/4 侧身",
+      "pose": "standing, body turned three-quarter side, face toward camera"
+    },
+    {
+      "label": "回眸",
+      "pose": "standing, body turned away, looking back over the shoulder"
+    },
+    {
+      "label": "走路",
+      "pose": "walking forward, one leg in front, hands in pockets"
+    },
+    {
+      "label": "重心偏一侧",
+      "pose": "standing with weight on one leg, hip slightly out, arms relaxed"
+    },
+    {
+      "label": "低头",
+      "pose": "standing, head slightly lowered, eyes looking down"
+    },
+    {
+      "label": "手扶衣领",
+      "pose": "standing, one hand adjusting the collar, other hand at side"
+    }
+  ],
+  "shots": [
+    {
+      "label": "全身",
+      "shot": "full body character",
+      "framing": "full body visible from head to toe, both feet visible at the bottom edge"
+    },
+    {
+      "label": "膝上",
+      "shot": "three-quarter body character",
+      "framing": "visible from head down to above the knees"
+    },
+    {
+      "label": "半身",
+      "shot": "upper body character",
+      "framing": "visible from head down to the waist"
+    },
+    {
+      "label": "胸上",
+      "shot": "bust portrait",
+      "framing": "visible from head down to the chest"
+    }
+  ]
+}
